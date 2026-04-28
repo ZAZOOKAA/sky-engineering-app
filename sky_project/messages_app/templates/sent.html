@@ -1,0 +1,13 @@
+<h1>Sent Messages</h1>
+
+<a href="/compose/">New Message</a> |
+<a href="/inbox/">Inbox</a> |
+<a href="/drafts/">Drafts</a>
+
+<hr>
+
+{% for msg in messages %}
+    <p><b>{{ msg.subject }}</b> → {{ msg.receiver }}</p>
+{% empty %}
+    <p>No sent messages</p>
+{% endfor %}
